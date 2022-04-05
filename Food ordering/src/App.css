@@ -1,0 +1,405 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+body {
+  font-family: 'Montserrat', 'sans-serif';
+  margin: 0;
+  padding: 0;
+}
+
+.foodCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 1px solid #a7a4a4;
+  border-radius: 0 0 20px 20px;
+  padding: 0.5em;
+}
+
+.foodCard img {
+  width: 20%;
+  height: 70%;
+  margin-left: 0.5em;
+}
+
+.foodCard .price p {
+  font-size: 0.9em;
+}
+
+.foodCard .price span {
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+.foodCard .price button {
+  cursor: pointer;
+  border-radius: 50%;
+  border: none;
+  background-color: #aeddae;
+  color: #0a790a;
+  font-size: 1.3em;
+  margin-left: 1.5em;
+}
+
+.foodCard .price button:hover {
+  color: #fff;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.foodCard .foodInformation {
+  width: 35%;
+  margin-inline: 1em;
+}
+
+.foodCard .foodInformation p {
+  font-size: 0.8em;
+}
+
+.foodCard .animated {
+  position: absolute;
+  top: 0%;
+  left: 25%;
+}
+
+.foodCardsGrid {
+  width: 50%;
+  margin-inline: auto;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 10px;
+  -ms-grid-columns: (minmax(290px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+
+.foodCardsGrid .dv {
+  border: 1px solid red;
+}
+
+.chooseExtras {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  top: 0;
+  left: 0;
+}
+
+.chooseExtras .popUp {
+  margin: 5em auto;
+  height: 65vh;
+  width: 50vw;
+  background-color: #fff;
+  border: 1px solid #bbbaba;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  position: relative;
+}
+
+.chooseExtras .popUp .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 8em;
+}
+
+.chooseExtras .popUp .left img {
+  height: 50%;
+  width: 50%;
+}
+
+.chooseExtras .popUp .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chooseExtras .popUp .right .exit {
+  height: 3em;
+  width: 3em;
+  border: none;
+  background-color: #fa6767;
+  color: #fff;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.chooseExtras .popUp .right .addFoodToList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 8em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.chooseExtras .popUp .right .addFoodToList p {
+  margin-right: 3em;
+}
+
+.chooseExtras .popUp .right .addFoodToList .order {
+  border: none;
+  padding: 0.2em 1em;
+  margin-right: 1em;
+  width: 10em;
+  height: 3em;
+  border-radius: 2em;
+  background-color: #62e662;
+  color: white;
+  font-weight: 600;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.chooseExtras .popUp .right .addFoodToList .order:hover {
+  background-color: #2cd42c;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+}
+
+.chooseExtras .popUp .right .extras {
+  margin-bottom: 3em;
+}
+
+.chooseExtras .popUp .right .extras p {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.chooseExtras .popUp .right li {
+  margin-top: 8px;
+}
+
+.chooseExtras .popUp .right li span {
+  font-weight: 500;
+}
+
+.listOfOrders {
+  width: 30%;
+  border: 1px solid #11C9D0;
+  margin: 2em auto;
+  padding: 1em;
+  font-size: 1.2em;
+}
+
+.listOfOrders span {
+  font-weight: 500;
+}
+
+.listOfOrders button {
+  margin-left: 1em;
+  border: 2px solid #cc6d6d;
+  color: #d34242;
+  font-size: 1em;
+  padding-inline: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.listOfOrders button:hover {
+  color: #fff;
+  background-color: #d34242;
+  font-weight: 500;
+  -webkit-transition: 0.2s ease-in;
+  transition: 0.2s ease-in;
+  border: 2px solid #d34242;
+}
+
+.listOfOrders .warning {
+  background-color: #f54c4c;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fff;
+  padding: 3px;
+  margin-top: 0.3em;
+}
+
+.form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 2em;
+}
+
+.form input[type=text] {
+  border: none;
+  margin: 0 0 1em 0.5em;
+  width: 40%;
+  font-size: 0.9em;
+  -webkit-box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0), inset 0 0 0 100px white;
+          box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0), inset 0 0 0 100px white;
+}
+
+.form input:focus {
+  outline: none;
+  border-bottom: 2px solid #11C9D0;
+}
+
+.form input[type=submit] {
+  width: 32%;
+  height: 3em;
+  margin-top: 1em;
+  border: 2px solid #11C9D0;
+  background-color: #fff;
+  color: #11C9D0;
+  border-radius: 1.1em;
+  font-size: 0.8em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form input[type=submit]:hover {
+  background-color: #11C9D0;
+  color: #fff;
+  -webkit-transition: 0.3s ease-in;
+  transition: 0.3s ease-in;
+}
+
+.orderSubmitted {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.orderSubmitted .content {
+  position: relative;
+  border: 1px solid #3b963b;
+  width: 50%;
+  height: 50%;
+  margin: 10% auto;
+}
+
+.orderSubmitted .content button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2em;
+  height: 2em;
+  margin: -1px;
+}
+
+.orderSubmitted .content h3 {
+  margin: 10% auto 0;
+  text-align: center;
+}
+
+.orderSubmitted .content p {
+  margin-left: 1em;
+}
+
+.orderSubmitted .content .orderInfo {
+  margin-top: 3em;
+}
+
+@media only screen and (max-width: 1176px) {
+  .foodCard {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #c2bfbf;
+  }
+  .chooseExtras .popUp {
+    margin-top: 2em;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 90vh;
+    position: -webkit-sticky;
+    position: sticky;
+  }
+  .chooseExtras .popUp .left {
+    margin-top: 6em;
+  }
+  .chooseExtras .popUp .left h2 {
+    font-size: 1.2em;
+  }
+  .chooseExtras .popUp .left img {
+    width: 30%;
+    height: 50%;
+  }
+  .chooseExtras .popUp .right {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .chooseExtras .popUp .right .extras {
+    margin-top: 2em;
+  }
+  .chooseExtras .popUp .right .addFoodToList {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-top: 6em;
+  }
+  .chooseExtras .popUp .right .addFoodToList p {
+    margin-right: 0;
+  }
+  .chooseExtras .popUp .right .addFoodToList .order {
+    width: 7em;
+  }
+  .chooseExtras .popUp .right .exit {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .listOfOrders {
+    width: 45%;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  .foodCardsGrid {
+    width: 90%;
+  }
+  .listOfOrders {
+    width: 70%;
+  }
+  .orderSubmitted {
+    margin-top: 2em;
+  }
+  .orderSubmitted .content {
+    width: 80%;
+  }
+  .orderSubmitted .content h3 {
+    margin-top: 3em;
+  }
+  .form input[type=submit] {
+    width: 8em;
+  }
+}
+/*# sourceMappingURL=App.css.map */

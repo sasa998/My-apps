@@ -1,0 +1,16 @@
+.character {
+  display: flex;
+}
+
+.character-content {
+  margin-left: 2rem;
+}
+
+.character-content h1 {
+  margin-bottom: 0;
+}
+
+.character-episode {
+  height: 50vh;
+  overflow: auto;
+}
