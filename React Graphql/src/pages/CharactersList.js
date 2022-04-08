@@ -22,6 +22,7 @@ function CharactersList() {
       {data.characters.results.map(character => {
         return <Link 
         style={{textDecoration: 'none', color: '#272827', border: '1px solid black', margin: '10px', padding: '10px'}} 
+        // use character.id as endpoint to later use that useparams as prop to query
         to={`/${character.id}`}>
             <h2>{character.name}</h2>
             <img src={character.image} alt = ''/>

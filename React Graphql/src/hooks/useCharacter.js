@@ -17,6 +17,7 @@ const GET_CHARACTER = gql`
 export const useCharacter = (id) => {
   const {data, error, loading} = useQuery(GET_CHARACTER, {
     variables: {
+      //id from useparams endpoint
       id
     }
   })
