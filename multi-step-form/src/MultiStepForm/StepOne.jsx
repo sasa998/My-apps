@@ -4,7 +4,8 @@ import * as Yup from 'yup'
 import { Select, Input } from '@chakra-ui/react'
 
 const StepOne = ({data, next}) => {
-  //on form submit takes values that user inputed and pass it to next function prop
+
+  //on form submit takes values that user inputed and pass it to function next prop
   const handleSubmit = (values) => {
     next(values)
   }
@@ -18,6 +19,7 @@ const StepOne = ({data, next}) => {
     <div>
       <Formik
       validationSchema={ValidationSchema}
+      // data = parent state prop
       initialValues={data}
       onSubmit={handleSubmit}
       >
@@ -38,12 +40,6 @@ const StepOne = ({data, next}) => {
                 <option value="Female">Female</option>
               </Field>
             </div>
-            {/* <div style={{width: '6.5em', marginTop: '1em'}}>
-            <Select placeholder='' size='md' variant='filled'>
-              <option value='option1'>Male</option>
-              <option value='option2'>Female</option>
-            </Select>
-            </div> */}
             <button type='submit'>Next</button>
           </Form>
         )}

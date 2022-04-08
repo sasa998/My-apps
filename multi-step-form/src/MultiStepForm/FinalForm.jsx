@@ -33,7 +33,7 @@ const FinalForm = () => {
   }
 
   const steps = [
-    //passing state data and handlers
+  //passing state data and handlers
   <StepOne next={handleNextStep} data={data} />, 
   <StepTwo next={handleNextStep} data={data} prev={handlePreviousStep} />,
   <FormSubmitted />
