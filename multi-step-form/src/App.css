@@ -1,7 +1,7 @@
 .parentForm {
   border: 1px solid black;
-  width: 25vw;
-  height: 65vh;
+  width: 35vw;
+  height: 70vh;
 }
 
 .parentForm h2 {
@@ -43,12 +43,6 @@
   color: #fff;
 }
 
-.buttons :nth-child(1):hover {
-  border-bottom: 2px solid black;
-  color: black;
-  transition: 0.3s ease;
-}
-
 .buttons :nth-child(2):hover {
   background-color: rgb(127, 189, 255);
   transition: 0.1s ease-in-out;
@@ -62,6 +56,13 @@
   transition: 0.1s ease;
 }
 
+.buttons :nth-child(1):hover {
+  background-color: #fff;
+  border-bottom: 2px solid black;
+  color: black;
+  transition: 0.3s ease;
+}
+
 .buttons :nth-child(1) {
   background-color: #fff;
   color: black;
@@ -70,9 +71,39 @@
   border-radius: 0;
 }
 
-.app {
+.signUp {
   display: flex;
   align-items: center;
   justify-content: center;
   height: 100vh;
+}
+
+.errorMsg {
+  font-size: 1em;
+}
+
+.buttons {
+  width: 40%;
+}
+
+
+@media screen and (max-width: 580px) {
+  .parentForm {
+    width: 90vw;
+    height: 70vh;
+  }
+
+  .errorMsg {
+    font-size: 0.8em;
+  }
+
+  .buttons {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width: 670px) {
+  .parentForm {
+    width: 70vw;
+  }
 }

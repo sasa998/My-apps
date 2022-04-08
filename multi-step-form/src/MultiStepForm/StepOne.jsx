@@ -2,8 +2,10 @@ import React, {useState} from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { Select, Input } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 
 const StepOne = ({data, next}) => {
+  const navigate = useNavigate()
 
   //on form submit takes values that user inputed and pass it to function next prop
   const handleSubmit = (values) => {
@@ -25,13 +27,13 @@ const StepOne = ({data, next}) => {
       >
         {({errors, touched}) => (
           <Form className='stepOne'>
-            <p style={{marginBottom: '10px'}}>First Name</p>
+            <p style={{margin: '10px 0'}}>First Name</p>
             <Field as={Input} name="firstName" />
-            {errors.firstName && touched.firstName && <p style={{fontSize: '1em', color: 'red', margin: '5px 0 20px 0'}}>{errors.firstName}</p>}
+            {errors.firstName && touched.firstName && <p className='errorMsg' style={{color: 'red', margin: '5px 0 20px 0'}}>{errors.firstName}</p>}
 
             <p style={{margin: '10px 0'}}>Last Name</p>
             <Field as={Input} name="lastName" />
-            {errors.lastName && touched.lastName && <p style={{fontSize: '1em', color: 'red', margin: '5px 0 0.5em 0'}}>{errors.lastName}</p>}
+            {errors.lastName && touched.lastName && <p className='errorMsg' style={{color: 'red', margin: '5px 0 0.5em 0'}}>{errors.lastName}</p>}
 
             <p style={{margin: '1em 0'}}>Gender</p>
             <div>
@@ -40,7 +42,10 @@ const StepOne = ({data, next}) => {
                 <option value="Female">Female</option>
               </Field>
             </div>
-            <button type='submit'>Next</button>
+            <div className='buttons' style={{display: 'flex', justifyContent: 'space-between'}}>
+              <button type='button' onClick={() => navigate('/')} >Back</button>
+              <button type='submit'>Next</button>
+            </div>
           </Form>
         )}
       </Formik>

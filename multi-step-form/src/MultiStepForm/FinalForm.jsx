@@ -40,9 +40,11 @@ const FinalForm = () => {
 ]
 
   return (
-    <div className='parentForm'>
-      <h2 style={{marginBottom: '0'}}>Sign up</h2>
-      {steps[currentStep]}
+    <div className='signUp'>
+      <div className='parentForm'>
+        <h2 style={{marginBottom: '0'}}>Sign up</h2>
+        {steps[currentStep]}
+      </div>
     </div>
   )
 }

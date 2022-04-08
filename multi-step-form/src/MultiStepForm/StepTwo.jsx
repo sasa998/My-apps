@@ -15,8 +15,8 @@ const StepTwo = ({data, next, prev}) => {
 
   const ValidationSchema = Yup.object({
     email: Yup.string().required().email('Invalid email!'),
-    password: Yup.string().required().min(6, 'Your password is too short!'),
-    confirmPassword: Yup.string().oneOf([Yup.ref('password'), null])
+    password: Yup.string().required().min(8, 'Your password is too short!'),
+    confirmPassword: Yup.string().oneOf([Yup.ref('password'), null]).required()
   })
 
   return (
@@ -43,7 +43,7 @@ const StepTwo = ({data, next, prev}) => {
             <Field type='password' name="confirmPassword" as = {Input} />
             {errors.confirmPassword && touched.confirmPassword && <p style={{fontSize: '1em', color: 'red', margin: '5px 0'}}>Passwords Must Match!</p>}
 
-            <div className='buttons' style={{width: '60%', display: 'flex', justifyContent: 'space-between'}}>
+            <div className='buttons' style={{display: 'flex', justifyContent: 'space-between'}}>
               <button type='button' onClick={() => prev(values)}>Back</button>
               <button type='submit'>Submit</button>
             </div>
