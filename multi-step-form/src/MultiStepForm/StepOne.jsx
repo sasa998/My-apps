@@ -18,7 +18,7 @@ const StepOne = ({data, next}) => {
   })
 
   return (
-    <div>
+    <div style={{position: 'relative'}}>
       <Formik
       validationSchema={ValidationSchema}
       // data = parent state prop
@@ -29,7 +29,7 @@ const StepOne = ({data, next}) => {
           <Form className='stepOne'>
             <p style={{margin: '10px 0'}}>First Name</p>
             <Field as={Input} name="firstName" />
-            {errors.firstName && touched.firstName && <p className='errorMsg' style={{color: 'red', margin: '5px 0 20px 0'}}>{errors.firstName}</p>}
+            {errors.firstName && touched.firstName && <p className='errorMsg' style={{color: 'red'}}>{errors.firstName}</p>}
 
             <p style={{margin: '10px 0'}}>Last Name</p>
             <Field as={Input} name="lastName" />

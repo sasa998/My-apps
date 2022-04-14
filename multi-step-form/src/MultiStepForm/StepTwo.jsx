@@ -14,8 +14,8 @@ const StepTwo = ({data, next, prev}) => {
   }
 
   const ValidationSchema = Yup.object({
-    email: Yup.string().required().email('Invalid email!'),
-    password: Yup.string().required().min(8, 'Your password is too short!'),
+    email: Yup.string().required('Email is a required field').email('Invalid email!'),
+    password: Yup.string().required('Password is a required field').min(8, 'Your password is too short!'),
     confirmPassword: Yup.string().oneOf([Yup.ref('password'), null]).required()
   })
 
@@ -32,16 +32,16 @@ const StepTwo = ({data, next, prev}) => {
           <Form className='stepTwo'>
             <p style={{marginBottom: '10px'}}>E-mail</p>
             <Field as = {Input} name="email" />
-            {errors.email && touched.email && <p style={{fontSize: '1em', color: 'red', margin: '5px 0'}}>{errors.email}</p>}
+            {errors.email && touched.email && <p style={{fontSize: '1em', color: 'red'}}>{errors.email}</p>}
 
 
             <p style={{margin: '10px 0'}}>Password</p>
             <Field type='password' name="password" as = {Input} />
-            {errors.password && touched.password && <p style={{fontSize: '1em', color: 'red', margin: '5px 0'}}>{errors.password}</p>}
+            {errors.password && touched.password && <p style={{fontSize: '1em', color: 'red'}}>{errors.password}</p>}
 
             <p style={{margin: '10px 0'}}>Confirm Password</p>
             <Field type='password' name="confirmPassword" as = {Input} />
-            {errors.confirmPassword && touched.confirmPassword && <p style={{fontSize: '1em', color: 'red', margin: '5px 0'}}>Passwords Must Match!</p>}
+            {errors.confirmPassword && touched.confirmPassword && <p style={{fontSize: '1em', color: 'red'}}>Passwords Must Match!</p>}
 
             <div className='buttons' style={{display: 'flex', justifyContent: 'space-between'}}>
               <button type='button' onClick={() => prev(values)}>Back</button>
